@@ -84,7 +84,7 @@ def html(returns, benchmark=None, rf=0., grayscale=False,
                 benchmark_title = benchmark[benchmark.columns[0]].name
 
         tpl = tpl.replace('{{benchmark_title}}', f"Benchmark is {benchmark_title.upper()} | ")
-        benchmark = _utils._prepare_benchmark(benchmark, returns.index, rf)
+        benchmark = _utils._prepare_benchmark(benchmark, returns, rf)
         if match_dates is True:
             returns, benchmark = _match_dates(returns, benchmark)
 
